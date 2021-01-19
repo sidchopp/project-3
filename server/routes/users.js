@@ -24,11 +24,14 @@ router.get('/', async (req, res, next) => {
 
 /* Details of a given Fuze. */
 router.get('/:date', function(req, res, next) {
-  let date = req.params.name;
-  if (! date) {
-    res.status(400).send('Bad request - `date` missing')
+  let FuzeId = req.params.id;
+  if (! FuzeId) {
+    res.status(400).send('Bad request - `id` parameter missing');
   }
-  res.send(date);
+  
+  let myFuze = `Looking for ${FuzeId}`;
+  //send the data in response
+  res.send(myFuze);
 });
 
 module.exports = router;
