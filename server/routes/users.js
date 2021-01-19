@@ -15,7 +15,7 @@ const Fuze = require('../models/FuzeSchema');
 // MODIFIED
 //There are two routes below
 
-
+//so when we have get request for /,function will be called
 router.get('/', async (req, res, next) => {
   let data = await Fuze.find({});
   console.info(`records retrieved from mongoose:`, data?.length)
@@ -28,7 +28,7 @@ router.get('/:date', function(req, res, next) {
   if (! FuzeId) {
     res.status(400).send('Bad request - `id` parameter missing');
   }
-  
+  // Query to Mongoose
   let myFuze = `Looking for ${FuzeId}`;
   //send the data in response
   res.send(myFuze);
