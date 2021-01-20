@@ -2,7 +2,6 @@
 
 import React from "react";
 import ReactDOM from 'react-dom';
-import './index.css';
 import Fuze from './components/Fuze';
 
 //create a react "functional" component
@@ -11,7 +10,7 @@ const App = () => {
   return <Fuze />
 };
 
-// take this react  component and show it on the screen
+// show the  above react component on screen
 
 ReactDOM.render(
   <React.StrictMode>

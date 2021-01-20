@@ -22,16 +22,20 @@ router.get('/', async (req, res, next) => {
   res.send(data);
 });
 
-/* Details of a given Fuze. */
-router.get('/:date', function(req, res, next) {
+/* to find a Fuze by its id */
+router.get('/:id', async (req, res, next) => {
   let FuzeId = req.params.id;
-  if (! FuzeId) {
-    res.status(400).send('Bad request - `id` parameter missing');
+  //console.info('I m here', FuzeId)
+ 
+  //error handling by try/catch in case of wrong id
+
+  try{
+    let data = await Fuze.findById(FuzeId);
+     res.send(data);
   }
-  // Query to Mongoose
-  let myFuze = `Looking for ${FuzeId}`;
-  //send the data in response
-  res.send(myFuze);
+   catch(error){
+     res.sendStatus(404)
+   }
 });
 
 module.exports = router;
