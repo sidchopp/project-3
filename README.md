@@ -5,7 +5,7 @@
 cd server
 npm run start
 
-# After the server started, go to browser and type: http://localhost:3000/Sandbox This will show ypu all the Data from out Monga DB.
+# After the server started, go to browser and type: http://localhost:3000/Sandbox This will show you all the Data from the Mongo DB.
 # You can also find a particular Fuze by typing: http://localhost:3000/Sandbox/id
 
 
@@ -14,4 +14,4 @@ npm run start
 cd client
 npm run start
 
-# after the server started it will automatically open a browser and will "display" one of the fetched Fuzes(by id) from our mongoDB
+# after the server started it will automatically open a browser and will "display" one of the fetched Fuzes(by id) from the mongoDB
